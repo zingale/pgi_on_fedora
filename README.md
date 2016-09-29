@@ -216,6 +216,9 @@ ln -s ../../../../lib64/libstdc++.so.6.0.21 ./libstdc++.so
 
 # Install MPI and make a module
 
+The Fedora MPICH is already managed via modules.  Here we create one
+for MPICH with PGI
+
 Download mpich 3.x
 
 ```
@@ -251,5 +254,10 @@ prepend-path  PATH          /opt/mpich-pgi/bin
 prepend-path  LD_LIBRARY_PATH /opt/mpich-pgi/lib
 prepend-path  MANPATH       /opt/mpich-pgi/share/man/mpich
 prepend-path  PKG_CONFIG_PATH /opt/mpich-pgi/lib/pkgconfig
+```
+
+To activate MPI for PGI, do:
+```
+module swap mpi/mpich-x86_64 mpi/mpich-pgi
 ```
 
